@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Link Hub</title>
+  <style>
+    :root {
+      --bg: #f5f5f7;
+      --bg-2: #fbfbfd;
+      --card: rgba(255, 255, 255, 0.72);
+      --text: #111113;
+      --muted: #6e6e73;
+      --line: rgba(17, 17, 19, 0.08);
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      --radius: 24px;
+      --radius-sm: 20px;
+      --max-width: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 100%);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .wrap {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+      padding: 32px 0 72px;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 40px;
+      padding: 10px 2px 2px;
+    }
+
+    .eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.35rem, 5vw, 4.6rem);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+      font-weight: 700;
+    }
+
+    .sub {
+      margin: 0;
+      max-width: 50ch;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.55;
+    }
+
+    .jump-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .jump-nav a {
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.7);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.93rem;
+      font-weight: 500;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .jump-nav a:hover,
+    .jump-nav a:focus-visible {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.95);
+      border-color: rgba(17, 17, 19, 0.12);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+      outline: none;
+    }
+
+    .sections {
+      display: grid;
+      gap: 28px;
+    }
+
+    .section {
+      background: var(--card);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: 0.98rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 650;
+      white-space: nowrap;
+      color: var(--muted);
+    }
+
+    .section-head::after {
+      content: "";
+      height: 1px;
+      background: linear-gradient(90deg, var(--line), transparent);
+      flex: 1;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 124px;
+      padding: 16px;
+      text-decoration: none;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(17, 17, 19, 0.06);
+      border-radius: var(--radius-sm);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.025);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .card:hover,
+    .card:focus-visible {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.06);
+      border-color: rgba(17, 17, 19, 0.1);
+      background: rgba(255, 255, 255, 0.98);
+      outline: none;
+    }
+
+    .card .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      width: fit-content;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: rgba(17, 17, 19, 0.04);
+      font-weight: 600;
+    }
+
+    .card strong {
+      font-size: 1rem;
+      line-height: 1.28;
+      letter-spacing: -0.025em;
+      margin-top: 16px;
+      font-weight: 650;
+    }
+
+    .card span {
+      color: var(--muted);
+      font-size: 0.87rem;
+      margin-top: 6px;
+      line-height: 1.45;
+    }
+
+    footer {
+      margin-top: 42px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      padding-left: 2px;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        width: min(calc(100% - 20px), var(--max-width));
+        padding-top: 22px;
+      }
+
+      .section {
+        padding: 16px;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .card {
+        min-height: 110px;
+        padding: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <div class="eyebrow">Personal links</div>
+      <h1>Everything, quietly organized.</h1>
+      <p class="sub">A calm, minimal homepage for the links you actually use ...</p>
+      <nav class="jump-nav" aria-label="Quick section links" id="jumpNav"></nav>
+    </header>
+
+    <section class="sections" id="sections"></section>
+
+    <footer>
+      Built as a lightweight one-page link hub. Edit <code>links.json</code> to manage the content without touching the layout.
+    </footer>
+  </main>
+
+  <script>
+    const jsonPath = 'links.json';
+
+    function groupBySection(items) {
+      return items.reduce((acc, item) => {
+        const section = item.section || 'Other';
+        if (!acc[section]) acc[section] = [];
+        acc[section].push(item);
+        return acc;
+      }, {});
+    }
+
+    function slugify(value) {
+      return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    }
+
+    function createCard(item) {
+      const card = document.createElement('a');
+      card.className = 'card';
+      card.href = item.url || '#';
+      card.target = '_blank';
+      card.rel = 'noopener noreferrer';
+      card.innerHTML = `
+        <div class="tag">${item.tag || 'Link'}</div>
+        <strong>${item.title || 'Untitled'}</strong>
+        <span>${item.description || ''}</span>
+      `;
+      return card;
+    }
+
+    function render(items) {
+      const grouped = groupBySection(items);
+      const sectionsEl = document.getElementById('sections');
+      const jumpNavEl = document.getElementById('jumpNav');
+
+      Object.entries(grouped).forEach(([sectionName, sectionItems]) => {
+        const id = slugify(sectionName);
+
+        const navLink = document.createElement('a');
+        navLink.href = `#${id}`;
+        navLink.textContent = sectionName;
+        jumpNavEl.appendChild(navLink);
+
+        const section = document.createElement('section');
+        section.className = 'section';
+        section.id = id;
+
+        const head = document.createElement('div');
+        head.className = 'section-head';
+        head.innerHTML = `<h2>${sectionName}</h2>`;
+
+        const grid = document.createElement('div');
+        grid.className = 'grid';
+        sectionItems.forEach((item) => grid.appendChild(createCard(item)));
+
+        section.appendChild(head);
+        section.appendChild(grid);
+        sectionsEl.appendChild(section);
+      });
+    }
+
+    async function init() {
+      try {
+        const response = await fetch(jsonPath);
+        if (!response.ok) throw new Error('Could not load links.json');
+        const items = await response.json();
+
+        if (!Array.isArray(items)) {
+          throw new Error('links.json must contain an array of link objects');
+        }
+
+        render(items);
+      } catch (error) {
+        document.getElementById('sections').innerHTML = `
+          <section class="section">
+            <div class="section-head"><h2>Error</h2></div>
+            <p class="sub">${error.message}</p>
+          </section>
+        `;
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>

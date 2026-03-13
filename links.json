@@ -1,0 +1,149 @@
+[
+  {
+    "section": "Watch",
+    "tag": "TV",
+    "title": "Kan 11",
+    "description": "Public broadcasting / live content",
+    "url": "https://www.kan.org.il/lobby/kan11/"
+  },
+  {
+    "section": "Watch",
+    "tag": "Archive",
+    "title": "Jerusalem Film Center",
+    "description": "Film and screening archive",
+    "url": "https://jfc.org.il/"
+  },
+  {
+    "section": "Watch",
+    "tag": "Streaming",
+    "title": "Kanopy",
+    "description": "The Voyage of Odysseus, 1982",
+    "url": "https://www.kanopy.com/en/haifa/"
+  },
+  {
+    "section": "Watch",
+    "tag": "Archive",
+    "title": "The Great Wall of China",
+    "description": "Internet Archive entry",
+    "url": "https://archive.org/details/TheGreatWallChina_20130"
+  },
+  {
+    "section": "Read",
+    "tag": "Research",
+    "title": "Academia",
+    "description": "Papers, essays, and academic reading",
+    "url": "https://www.academia.edu/"
+  },
+  {
+    "section": "Sites",
+    "tag": "Music",
+    "title": "Aerostat Playlists",
+    "description": "Playlist archive",
+    "url": "https://aerostatbg.ru/info/playlists"
+  },
+  {
+    "section": "Sites",
+    "tag": "Web",
+    "title": "Polyglobe",
+    "description": "A saved site from your list",
+    "url": "https://www.pizzint.watch/polyglobe"
+  },
+  {
+    "section": "Sites",
+    "tag": "Utility",
+    "title": "Moon Phases",
+    "description": "Quick moon phase lookup",
+    "url": "https://www.locate.co.il/Moon_Phases"
+  },
+  {
+    "section": "Me",
+    "tag": "Writing",
+    "title": "Medium",
+    "description": "Your profile / writing home",
+    "url": "https://medium.com/"
+  },
+  {
+    "section": "Me",
+    "tag": "Code",
+    "title": "GitHub",
+    "description": "annakoopenu",
+    "url": "https://github.com/annakoopenu"
+  },
+  {
+    "section": "Me",
+    "tag": "Art",
+    "title": "Anna Liza Gallery",
+    "description": "WordPress gallery site",
+    "url": "https://annalizagallery.wordpress.com/"
+  },
+  {
+    "section": "Me",
+    "tag": "Photos",
+    "title": "Flickr Album",
+    "description": "Photo archive album",
+    "url": "https://www.flickr.com/photos/choo_do/albums/72157619749240214/with/3626240221"
+  },
+  {
+    "section": "Me",
+    "tag": "Archive",
+    "title": "Stage",
+    "description": "Author page",
+    "url": "http://stage.co.il/Authors/KomhaAhat"
+  },
+  {
+    "section": "Me",
+    "tag": "Project",
+    "title": "Bolt Project 01",
+    "description": "author-creation-cata-sau5",
+    "url": "https://author-creation-cata-sau5.bolt.host"
+  },
+  {
+    "section": "Me",
+    "tag": "Project",
+    "title": "Bolt Project 02",
+    "description": "infinite-innovators-nycj",
+    "url": "https://infinite-innovators-nycj.bolt.host/"
+  },
+  {
+    "section": "Me",
+    "tag": "Project",
+    "title": "Spiralas with Python",
+    "description": "Google Sites page",
+    "url": "https://sites.google.com/view/sevensidesofmyself/i/spiralas-with-python?authuser=0"
+  },
+  {
+    "section": "Weather",
+    "tag": "Forecast",
+    "title": "Skiron Forecast Maps",
+    "description": "Forecast maps and weather visualization",
+    "url": "https://forecast.uoa.gr/en/forecast-maps/skiron"
+  },
+  {
+    "section": "Weather",
+    "tag": "Radar",
+    "title": "Weather1 Radar",
+    "description": "Live radar view",
+    "url": "https://www.weather1.live/radar/"
+  },
+  {
+    "section": "Weather",
+    "tag": "Moon",
+    "title": "Moon Phases",
+    "description": "Quick moon phase lookup",
+    "url": "https://www.locate.co.il/Moon_Phases"
+  },
+  {
+    "section": "Ideas",
+    "tag": "Concept",
+    "title": "Mantra Cube",
+    "description": "Add your link here",
+    "url": "#"
+  },
+  {
+    "section": "Ideas",
+    "tag": "Concept",
+    "title": "SistersGreen",
+    "description": "Add your link here",
+    "url": "#"
+  }
+]
