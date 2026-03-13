@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1 — אניה בתוך בקבוק</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --paper: rgba(255,255,255,0.78);
+      --text: #111827;
+      --muted: #6b7280;
+      --line: rgba(17,24,39,0.10);
+      --shadow: 0 18px 40px rgba(0,0,0,0.06);
+      --radius: 24px;
+      --max: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(187, 222, 251, 0.45), transparent 30%),
+        linear-gradient(180deg, #fbfcff 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    .wrap {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+      padding: 32px 0 72px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      direction: ltr;
+    }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.72);
+      border-radius: 999px;
+      padding: 10px 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero,
+    .panel {
+      background: var(--paper);
+      border: 1px solid rgba(255,255,255,0.8);
+      border-radius: var(--radius);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow {
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 4.5vw, 4rem);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+    }
+
+    .lead {
+      margin: 0;
+      max-width: 70ch;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(17,24,39,0.05);
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid rgba(17,24,39,0.06);
+      font-size: 0.95rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1.1fr 1.9fr;
+      align-items: start;
+    }
+
+    .panel {
+      padding: 22px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
+    }
+
+    figure {
+      margin: 0;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: white;
+    }
+
+    figcaption {
+      padding: 10px 12px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .footer {
+      margin-top: 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 860px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="topbar">
+      <a class="back" href="../index.html">← back</a>
+    </div>
+
+    <section class="hero">
+      <div class="eyebrow">play / test / page 1</div>
+      <h1>אניה בתוך בקבוק</h1>
+      <p class="lead">
+        עמוד ניסוי קטן: שיר אחד, סט של סקיצות, ואווירה ימית־שקטה.
+        זה בנוי כמו דף תוכן פנימי שאפשר לקשר אליו מהעמוד הראשי.
+      </p>
+      <div class="meta">
+        <a class="chip" href="https://stinkeysoul.livejournal.com/58962.html" target="_blank" rel="noopener noreferrer">למקור השיר</a>
+        <span class="chip">9 images</span>
+        <span class="chip">Hebrew / visual notes</span>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <h2>על הדף הזה</h2>
+        <p>
+          זה עמוד תוכן פשוט עם כותרת, קישור למקור, וטקסט מלווה ליד גלריית התמונות.
+          אפשר אחר כך להפוך אותו לתבנית לעוד נושאים.
+        </p>
+        <p>
+          כדי לשמור על הדף קל ונקי, הטקסט המלא של השיר לא הועתק לכאן.
+          במקום זה יש קישור ישיר למקור.
+        </p>
+        <p class="note">
+          אפשר בהמשך להוסיף כאן גם אודיו, טקסט אישי, הסברים, או ניווט לעמודים קשורים.
+        </p>
+      </article>
+
+      <section class="panel">
+        <h2>גלריה</h2>
+        <div class="gallery">
+          <figure>
+            <img src="A1.jpg" alt="סקיצה 1 של סירה וגלים" />
+            <figcaption>1. מפרשית</figcaption>
+          </figure>
+          <figure>
+            <img src="A2.jpg" alt="סקיצה 2 על רוח, כיוונים וים" />
+            <figcaption>2. רוח</figcaption>
+          </figure>
+          <figure>
+            <img src="A3.jpg" alt="סקיצה 3 על התקדמות מול הרוח" />
+            <figcaption>3. התקדמות מול הרוח</figcaption>
+          </figure>
+          <figure>
+            <img src="A4.jpg" alt="סקיצה 4 של Beat hauled" />
+            <figcaption>4. Beat hauled</figcaption>
+          </figure>
+          <figure>
+            <img src="A5.jpg" alt="סקיצה 5 של Beam reach" />
+            <figcaption>5. Beam reach</figcaption>
+          </figure>
+          <figure>
+            <img src="A6.jpg" alt="סקיצה 6 של Broad reach" />
+            <figcaption>6. Broad reach</figcaption>
+          </figure>
+          <figure>
+            <img src="A7.jpg" alt="סקיצה 7 של Dead Run" />
+            <figcaption>7. Dead Run</figcaption>
+          </figure>
+          <figure>
+            <img src="A8.jpg" alt="סקיצה 8 עם תרשים עגול" />
+            <figcaption>8. שושנת הרוחות</figcaption>
+          </figure>
+          <figure>
+            <img src="A9.jpg" alt="סקיצה 9 של כיווני עולם" />
+            <figcaption>9. כיווני עולם</figcaption>
+          </figure>
+        </div>
+      </section>
+    </section>
+
+    <div class="footer">
+      נבנה כעמוד מבחן לתוכן פנימי באתר.
+    </div>
+  </main>
+</body>
+</html>
